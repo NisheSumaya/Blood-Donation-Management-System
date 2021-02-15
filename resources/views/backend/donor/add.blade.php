@@ -22,8 +22,8 @@
 
 @csrf
   <div class="form-group">
-    <label for="name"> Name</label>
-    <input name="name"  placeholder=" fill up please" type="text" class="form-control" id="name" aria-describedby="emailHelp">
+    <label for="username"> Name</label>
+    <input name="username"  placeholder=" fill up please" type="text" class="form-control" id="username" aria-describedby="emailHelp">
    
   </div>
   <div class="form-group">
@@ -32,13 +32,13 @@
    
   </div>
   <div class="form-group">
-    <label for="e_mail">Email</label>
-    <input name="e_mail"  placeholder=" fill up please" type="email" class="form-control" id="e_mail" aria-describedby="emailHelp">
+    <label for="email">Email</label>
+    <input name="email"  placeholder=" fill up please" type="email" class="form-control" id="email" aria-describedby="emailHelp">
    
   </div>
   <div class="form-group">
     <label for="contact">Contact</label>
-    <input name="contact"  placeholder=" fill up please" type="number" class="form-control" id="contact" aria-describedby="emailHelp">
+    <input min="0" oninput="this.value = Math.abs(this.value)" name="contact"  placeholder=" fill up please" type="number" class="form-control" id="contact" aria-describedby="emailHelp">
  </div> 
  <div class="form-group">
     <label for="">Blood Group</label>

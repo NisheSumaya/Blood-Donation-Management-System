@@ -30,7 +30,7 @@
   
   <div class="form-group">
     <label for="description">Description</label>
-    <textarea name="description" id="" cols="30" rows="5" class="form-control" id="e_mail" aria-describedby="emailHelp"></textarea>
+    <textarea name="description" id="" cols="30" rows="5" class="form-control" id="description" aria-describedby="emailHelp"></textarea>
    
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>

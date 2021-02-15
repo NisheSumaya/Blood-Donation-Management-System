@@ -12,9 +12,12 @@
 
 /* Create two equal columns that floats next to each other */
 .column {
-  float: left;
-  width: 50%;
-  padding: 10px;
+    height: 200px;
+    float: left;
+    width: 48%;
+    padding: 10px;
+    margin-right: 2%;
+    margin-top: 22px;
 }
 
 /* Clear floats after the columns */
@@ -28,7 +31,7 @@
   border: none;
   outline: none;
   padding: 12px 16px;
-  background-color: #f1f1f1;
+  background-color: #ce1a1a;
   cursor: pointer;
 }
 
@@ -56,7 +59,7 @@
 
 <div class="row">
 @foreach($notices as $data)
-  <div class="column" style="background-color: #f3f0f0">
+<div class="column text-white" style="background-image:url({{asset('uploads/notice/'.$data->image)}});background-size:cover;background-repeat:no-repeat">
     <h2>{{$data->name}}</h2>
     <p>{{$data->description}}</p>
   </div>
@@ -81,7 +84,7 @@ function listView() {
 // Grid View
 function gridView() {
   for (i = 0; i < elements.length; i++) {
-    elements[i].style.width = "50%";
+    elements[i].style.width = "48%";
   }
 }
 

@@ -48,6 +48,7 @@ public function loginform()
     {
 
         return view('login');
+        return redirect()-> back()->with('msg','Login Successfully');
 
     }
 
@@ -71,7 +72,7 @@ public function login(Request $request)
 public function logout()
     {
         Auth::logout();
-        return redirect()->back()->with('message','Logout Success!');
+        return redirect()->route('welcome.home')->with('message','Logout Success!');
     }
     public function viewprofile()
 {    $post = Post::where('user_id',auth()->user()->id)->count('id');
@@ -80,5 +81,10 @@ public function logout()
    return view ('frontend.profile.profile',compact('user','post'));
               
 
+}   public function adminLogout()
+{
+    Auth::logout();
+    return redirect()->route('login')->with('message','Logout Success!');
 }
+
 }

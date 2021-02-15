@@ -6,7 +6,7 @@
 
         <h1 class="text-light">
         <a href="{{route('welcome.home')}}"><img  src="{{asset('logo.png')}}" alt="" class="img-fluid"></a>
-        <a style="color:orange;" href="" ><span> Blood Donation Sytem</span></a>
+        <a style="color:red;" href="" ><span><b> Blood Donation System </b></span></a>
         </h1>
         <!-- Uncomment below if you prefer to use an image logo -->
 
@@ -17,11 +17,9 @@
         <li class="{{ Route::currentRouteName() ==  'home' ? 'active' : '' }}"><a href="{{route('welcome.home')}}">Home</a></li>
           <li class="{{ Route::currentRouteName() ==  'about.us' ? 'active' : '' }}"><a href="{{route('about.us')}}">About</a></li>
           
-          <li><a href="{{route('gallery')}}">Gallery</a></li>
-          
           <li><a href="{{route('all.event')}}">Events</a></li>
           
-          <li class="drop-down"><a href="">Doners</a>
+          <li class="drop-down"><a href="{{route('all.donor.list')}}">Doners</a>
             <ul>
             @foreach($cate as $data)
             

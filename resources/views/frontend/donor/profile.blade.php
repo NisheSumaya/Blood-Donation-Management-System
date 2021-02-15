@@ -11,19 +11,27 @@
 
 <div class="container emp-profile">
             <form method="post">
+        
+
+        
                 <div class="row">
                     <div class="col-md-4">
-                        
+                    <div style="margin-top:40px">
+                   <img src="http://localhost/bdms/public/assets/img/profile.webp" style="
+    width: 300px;
+    height: 300px;
+">
+                   </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="profile-head">
+                    <div class="col-md-8">
+                    <div class="profile-head">
                                     <h5>
                                        
                                     </h5>
                                     <h2>
-                                     Donor Profile
+                                    Donor Information
                                     </h2>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                                    <p class="proile-rating"> <span></span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
@@ -33,21 +41,14 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                    </div>
-                    <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <div class="row">
+                            <div class="row">
                                             <div class="col-md-6">
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p > {{$donor->name}} </p>
+                                                <p > {{$donor->username}} </p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -55,7 +56,7 @@
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$donor->e_mail}}</p>
+                                                <p>{{$donor->email}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -91,7 +92,7 @@
                                             </div>
                                         </div>
                                         
-                                        
+        
                             </div>
                             
                         </div>

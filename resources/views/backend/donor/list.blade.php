@@ -22,7 +22,7 @@ Donor List
 @foreach($donors as $key=>$donor)
     <tr >
       <th scope="row">{{$key+1}}</th>
-      <td>{{$donor->name}}</td>
+      <td>{{$donor->username}}</td>
       <td>{{$donor->status}}</td>
       <td class="text-center">
       <a class="btn btn-primary" href="{{route('donor.edit',$donor->id)}}">Edit</a>

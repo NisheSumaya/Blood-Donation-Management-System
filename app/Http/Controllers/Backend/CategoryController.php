@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Donor;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -45,7 +45,7 @@ public function getAllDonors($id)
 
         $category=Category::find($id);
 
-        $donors=Donor::where('category_id','=',$id)->get();
+        $donors=User::where('category_id','=',$id)->get();
         //select * from products where category_id=$id;
 
         return view('backend.category.view',compact('donors','category'));

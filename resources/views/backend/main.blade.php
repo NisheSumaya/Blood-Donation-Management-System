@@ -53,5 +53,6 @@
       <script src="{{asset('assets')}}/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-        <script src="{{asset('assets')}}/dashboard.js"></script></body>
+        <script src="{{asset('assets')}}/dashboard.js"></script>  
+        </body>
 </html>

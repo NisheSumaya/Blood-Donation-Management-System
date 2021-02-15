@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Donor;
 use App\Models\Category;
 use App\Models\Backend\CategoryController;
@@ -20,8 +21,8 @@ class DonorController extends Controller
 public function storefrom(Request $request)
 {
 $request-> validate([
-    'name'                           => 'required',
-    'e_mail'                         => 'required',
+    'username'                       => 'required',
+    'email'                          => 'required',
     'address'                        => 'required',
     'contact'                        => 'required',
     'password'                       => 'required',
@@ -31,13 +32,14 @@ $request-> validate([
 
 
 ]);
-    Donor::create([
-        'name'             => $request-> name,
-        'e_mail'           => $request-> e_mail,
-        'category_id'      => $request-> category_id,
-        'address'          => $request-> address,
-        'contact'          => $request-> contact,
-        'password'         => $request-> password,
+    User::create([
+        'username'         => $request->username,
+        'email'            => $request->email,
+        'category_id'      => $request->category_id,
+        'address'          => $request->address,
+        'contact'          => $request->contact,
+        'password'         => bcrypt($request->password),
+        'role'             =>'donor'
 
     ]);
     return redirect()-> back()->with('msg','Donor added Successfully');
@@ -45,28 +47,30 @@ $request-> validate([
 }
 public function showlist(){
 
-    $donors=Donor::with('category')->paginate(5);
+    $donors=User::with('category')->where('role','=','donor')->paginate(5);
+
+    //dd($donors);
 
     return view('backend.donor.list',compact('donors'));
 
 }
 public function deletedonor($pid)
 {
-$donor=Donor::find($pid);
+$donor=User::find($pid);
 $donor->delete();
 return redirect()-> back();
 }
 public function viewdonor($pid)
 {
 
-$single_donor=Donor::find($pid);
+$single_donor=User::find($pid);
 return view('backend.donor.view',compact('single_donor'));
 
 }
 public function editdonor($pid)
 {
 
-    $donor=Donor::find($pid);
+    $donor=User::find($pid);
 return view('backend.donor.edit',compact('donor'));
 return redirect()-> back()->with('msg','Donor Updated Successfully');
 
@@ -75,28 +79,39 @@ return redirect()-> back()->with('msg','Donor Updated Successfully');
 
 public function updatedonor(Request $request,$id)
 {
-
+//dd($request->all());
     $request-> validate([
-        'name'              => 'required',
-        'e_mail'            => 'required',
+
+        'username'          => 'required',
+        'email'             => 'required',
         'address'           => 'required',
         'contact'           => 'required',
         'password'          => 'required',]);
 
-        $donor=Donor::find($id);
+        $donor=User::find($id);
     $donor->update([
             
-            'name'      => $request-> name,
-            'e_mail'    => $request-> e_mail,
+            'username'  => $request-> username,
+            'email'     => $request-> email,
             'address'   => $request-> address,
             'contact'   => $request-> contact,
             'status'    =>$request-> status,
-            'password'  => $request-> password,
+            'password'  => bcrypt($request->password),
     
         ]);
         return redirect()-> back()->with('msg','Donor Updated Successfully');
     
 
+
+}
+
+public function showAlldonor(){
+
+    $alldonors=User::with('category')->where('role','=','donor')->paginate(5);
+
+    //dd($donors);
+
+    return view('frontend.donor.alldonor',compact('alldonors'));
 
 }
 }

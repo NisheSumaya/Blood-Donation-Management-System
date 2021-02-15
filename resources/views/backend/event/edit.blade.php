@@ -18,7 +18,7 @@
 <p class= "alert alert-success">{{session()->get('msg')}}</p>
 
 @endif
-<form method="post" action="{{route('event.update',$event->id)}}">
+<form method="post" action="{{route('event.update',$event->id)}}" enctype="multipart/form-data">
 
 @csrf
   <div class="form-group">
@@ -44,6 +44,12 @@
   <div class="form-group">
     <label for="detail">Detail</label>
     <textarea name="detail" id="" cols="30" rows="5" class="form-control" id="detail" aria-describedby="emailHelp">{{$event->detail}}</textarea>
+   
+  </div>
+  <div class="form-group">
+    <label for="image">Image</label>
+    <input type="file" name="image" id="" cols="30" rows="5" class="form-control" id="detail" aria-describedby="emailHelp"
+      onchange="readURL(this);">
    
   </div>
   <button type="submit" class="btn btn-primary">Update</button>

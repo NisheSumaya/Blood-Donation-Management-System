@@ -24,9 +24,9 @@ Notice list
       <td>{{$notice->name}}</td>
       <td>{{$notice->description}}</td>
       <td class="text-center">
-      <a class="btn btn-primary" href="">Edit</a>
-      <a class="btn btn-danger" href="">Delete</a>
-      
+      <a class="btn btn-success" href="{{route('notice.view',$notice->id)}}">View</a>
+      <a class="btn btn-primary" href="{{route('notice.edit',$notice->id)}}">Edit</a>
+      <a class="btn btn-danger" href="{{route('notice.delete',$notice->id)}}">Delete</a>
       </td>
 
 

@@ -19,4 +19,7 @@
 <p>
 <label for=""> Detail:{{$single_event->detail}}</label>
 </p>
+<p>
+<img src="{{asset('uploads/event/'.$single_event->image)}}" height="200px" weight="200px">
+</p>
 @stop

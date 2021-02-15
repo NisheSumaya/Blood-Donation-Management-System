@@ -22,8 +22,8 @@
 <h2>Edit Donors</h2>
 @csrf
   <div class="form-group">
-    <label for="name"> Name</label>
-    <input value="{{$donor->name}}" name="name"  placeholder=" fill up please" type="text" class="form-control" id="name" aria-describedby="emailHelp">
+    <label for="username"> Name</label>
+    <input value="{{$donor->username}}" name="username"  placeholder=" fill up please" type="text" class="form-control" id="name" aria-describedby="emailHelp">
    
   </div>
   <div class="form-group">
@@ -32,8 +32,8 @@
    
   </div>
   <div class="form-group">
-    <label for="e_mail">Email</label>
-    <input  value="{{$donor->e_mail}}"name="e_mail"  placeholder=" fill up please" type="email" class="form-control" id="e_mail" aria-describedby="emailHelp">
+    <label for="email">Email</label>
+    <input  value="{{$donor->email}}"name="email"  placeholder=" fill up please" type="email" class="form-control" id="e_mail" aria-describedby="emailHelp">
    
   </div>
   <div class="form-group">

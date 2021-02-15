@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->string('contact',11);
              $table->text('location');
             $table->date('date');
-            $table->string('quantity');
+            $table->string('quantity',1);
             $table->text('detail');
             $table->timestamps();
         });

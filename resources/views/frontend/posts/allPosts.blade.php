@@ -12,10 +12,12 @@
 
 /* Create two equal columns that floats next to each other */
 .column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  /* margin:5px; */
+    height: 200px;
+    float: left;
+    width: 48%;
+    padding: 10px;
+    margin-right: 2%;
+    margin-top: 22px;
 }
 
 /* Clear floats after the columns */
@@ -25,7 +27,22 @@
   clear: both;
 }
 /* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #ce1a1a;
+  cursor: pointer;
+}
 
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
 </style>
 </head>
 <body>
@@ -49,8 +66,13 @@
     <h2>{{$data->location}}</h2>
     <p>{{$data->detail}}</p>
     <div class="form-group">
-      <a href="{{route('post.view.detail',$data->id)}}" class="btn btn-info">View</a>
-      <a href="" class="btn btn-success">Interested</a>
+      <a href="{{route('post.view.detail',$data->id)}}" class="btn btn-danger">View</a>
+
+      @if($data->interseted)
+      <a class="">Interested</a>
+      @else
+      <a href="{{route('interseted',$data->id)}}" class="btn btn-success">Interested</a>
+      @endif
     </div>
   </div>
   @endforeach
@@ -74,7 +96,7 @@ function listView() {
 // Grid View
 function gridView() {
   for (i = 0; i < elements.length; i++) {
-    elements[i].style.width = "50%";
+    elements[i].style.width = "48%";
   }
 }
 

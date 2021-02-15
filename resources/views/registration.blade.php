@@ -9,7 +9,7 @@
     <style>
   body {
     margin: 0;
-    color: #6a6f8c;
+    color: #f1f2f7;
     background-image: url({{asset('/assets/img/reg.jpg')}});
     background-position:center;
     background-repeat: no-repeat;
@@ -38,8 +38,8 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    padding: 90px 70px 50px 70px;
-    background: rgba(0, 77, 77, .9)
+    padding: 20px 10px;
+    background: rgb(150 39 14 / 90%);
 }
 
 .login-snip .login,
@@ -114,12 +114,12 @@
 }
 
 .login-space .group .label {
-    color: #aaa;
+    color: #f5ecec;
     font-size: 12px
 }
 
 .login-space .group .button {
-    background: #1161ee
+    background: #fbf1f1
 }
 
 .login-space .group label .icon {
@@ -264,7 +264,7 @@ a {
                             
                             <div class="group"> <label for="email" class="label">Email</label> <input id="email" name="email" type="email" class="input" data-type="email" placeholder="Enter your Email address"> </div>
                             
-                            <div class="group"> <label for="contact" class="label">Contact</label> <input id="pass" type="number" name="contact" class="input" data-type="number" placeholder="Enter your Phone Number"> </div>
+                            <div class="group"> <label for="contact" class="label">Contact</label> <input min="0" oninput="this.value = Math.abs(this.value)" id="contact" type="number" name="contact" class="input" data-type="number" placeholder="Enter your Phone Number"> </div>
                             <div class="form-group">
                              <label for="">Blood Group</label>
                              <select name="category_id" id=""class="form-control">
@@ -276,7 +276,7 @@ a {
  
                             <div class="group"> 
                             <label for="address" class="label">Address</label>
-                             <input id="address" type="textarea" class="input" name="address" data-type="password" placeholder="Enter your valid Address"> 
+                             <input id="address" type="textarea" class="input" name="address" data-type="textarea" placeholder="Enter your valid Address"> 
                              </div>
                             <div style="
                             margin-bottom: 10px;

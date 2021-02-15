@@ -12,7 +12,7 @@ class NoticeController extends Controller
     public function getNotices()
     {
        
-        $notices=Notice::all();
+        $notices=Notice::orderBy('id','desc')->get();
        
 
      return view('frontend.notice.allNotice',compact('notices'));

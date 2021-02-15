@@ -55,7 +55,7 @@ h2 {
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
-  background: #356e6f;
+  background: #bb2908;
   padding: 30px;
   width: 90%;
   max-width: 450px;
@@ -135,7 +135,12 @@ input[type=button], input[type=submit], input[type=reset]  {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
+a.fadeIn.fourth.btn-signup {
+    width: 209;
+}
+input.fadeIn.fourth {
+    width: 209;
+}
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
   background-color: #39ace7;
 }
@@ -303,16 +308,51 @@ input[type=text]:placeholder {
     <div class="fadeIn first">
       <img src="{{asset('logo.png')}}" id="icon" alt="User Icon" />
     </div>
-<h5><a style="color:orange;" href="{{route('welcome.home')}}" ><span> Blood Donation Sytem</span></a></h5>
+<h5><a style="color:orange;" href="{{route('welcome.home')}}" ><span><b><i>Blood Donation Sytem</i></b> </span></a></h5>
+<div>
+@if ($errors->any())
+    <div>
+        
+            @foreach ($errors->all() as $error)
+                <p class="alert alert-danger">{{ $error }}</p>
+            @endforeach
+        
+    </div>
+@endif
+
+@if(session()->has('msg'))
+
+<p class= "alert alert-success">{{session()->get('msg')}}</p>
+
+@endif
+</div>
     <!-- Login Form -->
     <form action="{{route('login.user')}}" method="post">
     @csrf
+    <div class="row">
+    
+
+    <div class="col-md-6 mx-auto p-0">
+    <div class="card">
+            <div class="login-box">
+                <div class="login-snip">
+                
       <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username">
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Log In">
-      <a href="{{route('register.user')}}" class="fadeIn fourth btn-signup">sign up</a>
-    </form>
+      <a href="http://localhost/bdms/public/registration" class="fadeIn fourth btn-signup">sign up</a>
+    
 
+    
+
+  </div>
+</div>
+</div>
+    </div>
+       
+</div>
+</div>
+</form>
     
 
   </div>

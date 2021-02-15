@@ -5,13 +5,13 @@
 <h2>View Donor Details</h2>
 <br>
 <p>
-<label for=""> Donor Name:{{$single_donor->name}}</label>
+<label for=""> Donor Name:{{$single_donor->username}}</label>
 </p>
 <p>
 <label for=""> Password:{{$single_donor->password}}</label>
 </p>
 <p>
-<label for=""> Email:{{$single_donor->e_mail}}</label>
+<label for=""> Email:{{$single_donor->email}}</label>
 </p>
 <p>
 <label for=""> Contact:{{$single_donor->contact}}</label>

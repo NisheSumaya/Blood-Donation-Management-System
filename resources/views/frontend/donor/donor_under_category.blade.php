@@ -18,12 +18,12 @@ Donor List : {{$category->name}}
   </thead>
   <tbody>
 @foreach($donors as $key=>$donor)
-    <tr >
+    <tr > 
       <th scope="row">{{$key+1}}</th>
-      <td>{{$donor->name}}</td>
+      <td>{{$donor->username}}</td>
       <td>{{$donor->status}}</td>
       <td class="text-center">
-      <a class="btn btn-success" href="{{route('donor.profile',$donor->id)}}">View</a>
+      <a class="btn btn-danger" href="{{route('donor.profile',$donor->id)}}">View</a>
       
       </td>
 

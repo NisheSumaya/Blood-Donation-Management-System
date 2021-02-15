@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Backend\CategoryController;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\PostInterest;
+use App\Notifications\PostInterest as PostNotification;
 
 
 class PostController extends Controller
@@ -53,8 +55,9 @@ class PostController extends Controller
     public function getposts()
     {
        
-        $posts=Post::all();
-       
+        $posts=Post::with(['interseted'])->orderBy('id','desc')->get();
+
+    
 
      return view('frontend.posts.allposts',compact('posts'));
     }
@@ -64,6 +67,28 @@ class PostController extends Controller
     $post=Post::find($id);
     return view('frontend.posts.viewpost',compact('post'));
      }
+public function getMypost()
+{
+    $id=auth()->user()->id;
+$mypost = Post::where('user_id',$id)->orderby('id','desc')->get();
+//dd($mypost);
+return view ('frontend.posts.mypost',compact('mypost'));
 
+}
+
+
+public function interseted($id){
+
+    PostInterest::updateOrcreate([
+        'post_id'=>$id,
+        'user_id'=>auth()->user()->id
+    ]);
+
+    $post = Post::findOrFail($id);
+    $postUser = $post->user;
+    $postUser->notify(new PostNotification(auth()->user(), $post));
+
+    return redirect()->back();
+}
 
 }

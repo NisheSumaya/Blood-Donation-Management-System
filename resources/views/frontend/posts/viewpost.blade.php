@@ -11,12 +11,20 @@
 
 <div class="container emp-profile">
             <form method="post">
+        
+
+        
                 <div class="row">
                     <div class="col-md-4">
-                        
+                    <div style="margin-top:100px">
+                   <img src="http://localhost/bdms/public/assets/img/post.jpg" style="
+    width: 300px;
+    height: 300px;
+">
+                   </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="profile-head">
+                    <div class="col-md-8">
+                    <div class="profile-head">
                                     <h5>
                                        
                                     </h5>
@@ -33,15 +41,6 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    
-                </div>
-
-        
-                <div class="row">
-                    <div class="col-md-4">
-                    </div>
-                    <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">

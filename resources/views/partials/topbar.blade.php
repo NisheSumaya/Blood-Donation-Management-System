@@ -10,16 +10,16 @@
         
       <div class="drop-down">
   <a class="" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<img src="https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxMjA3fDB8MXxzZWFyY2h8Nnx8bmF0dXJhbHx8MHx8fA&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080" alt="Avatar" 
-style="
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    margin: 0px 10px 0 0;">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: red;
+    width: 30px;
+    height: 30px;
+    margin-right: 40px;">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+</svg>
 </a>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="">
-    <a class="dropdown-item" href="{{route('profile.view',auth()->user()->id)}}">Profile</a>
-
+     <a class="dropdown-item" href="{{route('profile.view',auth()->user()->id)}}">Profile</a>
+     <a class="dropdown-item" href="{{route('my.post')}}">My Post</a> 
      <a class="dropdown-item" href="{{route('user.logout')}}">Logout</a> 
     
   </div>

@@ -85,7 +85,7 @@
   </div>
   <div class="form-group">
     <label for="contact">Contact</label>
-    <input name="contact"  placeholder=" fill up please" type="number" class="form-control" id="contact" aria-describedby="emailHelp">
+    <input min="0" oninput="this.value = Math.abs(this.value)" name="contact"  placeholder=" fill up please" type="number" class="form-control" id="contact" aria-describedby="emailHelp">
  </div> 
  <div class="form-group">
     <label for="">Blood Group</label>
@@ -110,14 +110,14 @@
 
  <div class="form-group">
     <label for="quantity">Quantity</label>
-    <input name="quantity" id="" cols="30" rows="5" class="form-control" id="quantity" aria-describedby="emailHelp">
+    <input min="0" oninput="this.value = Math.abs(this.value)" name="quantity" id="" cols="30" rows="5" class="form-control" id="quantity" aria-describedby="emailHelp">
    
   </div>
   <div class="form-group">
     <label for="detail">Details</label>
     <textarea name="detail" id="" cols="30" rows="5" class="form-control" id="detail" aria-describedby="emailHelp"></textarea>
    </div>
-  <button type="submit" class="btn btn-success">Post</button>
+  <button type="submit" class="btn btn-danger">Post</button>
 </form>
 
 @stop
